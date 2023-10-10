@@ -14,7 +14,7 @@ jobs:
       #needs: tags
       uses: ./.github/workflows/docker.yml
       with:
-        image_name: "romainp01/fibonacci"
+        image_name: "bbmt0/fibonacci"
         image_version: "0.0.1"
         image_build_args: ""
         image_context: "./Fibonacci"
