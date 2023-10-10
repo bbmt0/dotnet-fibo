@@ -33,7 +33,7 @@ jobs:
           fi
   build_docker:
     needs: tags
-    uses: ./.github/workflows/Docker.yml
+    uses: ./.github/workflows/docker.yml
     with:
       image_name: "bbmt0/fibonacci"
       image_version: "${{ needs.tags.outputs.new_version }}"
