@@ -1,45 +1,73 @@
 ﻿using System.Diagnostics;
+using Microsoft.EntityFrameworkCore;
 
 namespace Leonardo;
 
 public class Fibonacci
 {
-    public static int Run(int i)
+    private readonly FibonacciDataContext _context;
+    public Fibonacci(FibonacciDataContext context)
     {
-        if (i <= 2)
-            return 1;
-        return Run(i - 1) + Run(i - 2);
+        _context = context;
     }
     
-    public static async Task<IList<int>> RunAsync(string[] args)
+    public async Task<IList<int>> RunAsync(string[] args)
     {
         if (args.Length >= 100)
         {
-            throw new ArgumentException("Too much");
+            throw new ArgumentException("Too many arguments.");
         }
+        
+        Stopwatch sw = new();
+        sw.Start();
+
         IList<int> results = new List<int>();
-        Stopwatch stopwatch = new Stopwatch();
-        stopwatch.Start();
         var tasks = new List<Task<int>>();
-        foreach(var arg in args)
+        
+        foreach (var s in args)
         {
-            var task = Task.Run(() =>
+            var tFibonacci = await _context.TFibonaccis
+                .Where(t => t.FibInput == int.Parse(s))
+                .FirstOrDefaultAsync();
+            if (tFibonacci == null)
             {
-                var result = Fibonacci.Run(int.Parse(arg));
-                Console.WriteLine($"Elapsed time: {stopwatch.ElapsedMilliseconds} ms {arg}");
-                return result;
-            });
-            tasks.Add(task);
+                var task = Task.Run(() =>
+                {
+                    var result = Run(int.Parse(s));
+                    Console.WriteLine($"Elapsed time: {sw.ElapsedMilliseconds} ms");
+                    return result;
+                });
+                tasks.Add(task);
+            }else
+            {
+                tasks.Add(Task.FromResult((int)tFibonacci.FibOutput));
+            }
         }
+        
         foreach (var task in tasks)
         {
             var result = await task;
+                
+            _context.TFibonaccis.Add(new TFibonacci
+            {
+                FibInput = int.Parse(args[tasks.IndexOf(task)]),
+                FibOutput = result
+            });
+                
             Console.WriteLine($"Result: {result}");
-            results.Add(result);
+            results.Add(task.Result);
         }
-        stopwatch.Stop();
-        Console.WriteLine("Total elapsed time: {0} ms", stopwatch.ElapsedMilliseconds);
-
+            
+        sw.Stop();
+        Console.WriteLine($"Total time: {sw.ElapsedMilliseconds} ms");
+        
+        await _context.SaveChangesAsync();
+        
         return results;
+    }
+    
+    private static int Run(int n)
+    {
+        return n <= 2 ? n : Run(n - 1) + Run(n - 2);
     }
 }

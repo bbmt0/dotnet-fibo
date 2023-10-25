@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/Benoit/il tuo team Dropbox/Benoit B/Mac/Desktop/Cours .NET/Fibonacci/src/Demo/Demo.csproj": {}
+    "/home/bb/Dev/School/Dotnet/dotnet-fibo/src/Demo/Demo.csproj": {}
   },
   "projects": {
-    "/Users/Benoit/il tuo team Dropbox/Benoit B/Mac/Desktop/Cours .NET/Fibonacci/src/Demo/Demo.csproj": {
+    "/home/bb/Dev/School/Dotnet/dotnet-fibo/src/Demo/Demo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/Benoit/il tuo team Dropbox/Benoit B/Mac/Desktop/Cours .NET/Fibonacci/src/Demo/Demo.csproj",
+        "projectUniqueName": "/home/bb/Dev/School/Dotnet/dotnet-fibo/src/Demo/Demo.csproj",
         "projectName": "Demo",
-        "projectPath": "/Users/Benoit/il tuo team Dropbox/Benoit B/Mac/Desktop/Cours .NET/Fibonacci/src/Demo/Demo.csproj",
-        "packagesPath": "/Users/Benoit/.nuget/packages/",
-        "outputPath": "/Users/Benoit/il tuo team Dropbox/Benoit B/Mac/Desktop/Cours .NET/Fibonacci/src/Demo/obj/",
+        "projectPath": "/home/bb/Dev/School/Dotnet/dotnet-fibo/src/Demo/Demo.csproj",
+        "packagesPath": "/home/bb/.nuget/packages/",
+        "outputPath": "/home/bb/Dev/School/Dotnet/dotnet-fibo/src/Demo/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/Benoit/.nuget/NuGet/NuGet.Config"
+          "/home/bb/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -26,8 +26,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/Users/Benoit/il tuo team Dropbox/Benoit B/Mac/Desktop/Cours .NET/Fibonacci/src/Leonardo/Leonardo.csproj": {
-                "projectPath": "/Users/Benoit/il tuo team Dropbox/Benoit B/Mac/Desktop/Cours .NET/Fibonacci/src/Leonardo/Leonardo.csproj"
+              "/home/bb/Dev/School/Dotnet/dotnet-fibo/src/Leonardo/Leonardo.csproj": {
+                "projectPath": "/home/bb/Dev/School/Dotnet/dotnet-fibo/src/Leonardo/Leonardo.csproj"
               }
             }
           }
@@ -57,31 +57,31 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.100-rc.1.23463.5/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/home/bb/.dotnet/sdk/8.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/Benoit/il tuo team Dropbox/Benoit B/Mac/Desktop/Cours .NET/Fibonacci/src/Leonardo/Leonardo.csproj": {
+    "/home/bb/Dev/School/Dotnet/dotnet-fibo/src/Leonardo/Leonardo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/Benoit/il tuo team Dropbox/Benoit B/Mac/Desktop/Cours .NET/Fibonacci/src/Leonardo/Leonardo.csproj",
-        "projectName": "Leonardo",
-        "projectPath": "/Users/Benoit/il tuo team Dropbox/Benoit B/Mac/Desktop/Cours .NET/Fibonacci/src/Leonardo/Leonardo.csproj",
-        "packagesPath": "/Users/Benoit/.nuget/packages/",
-        "outputPath": "/Users/Benoit/il tuo team Dropbox/Benoit B/Mac/Desktop/Cours .NET/Fibonacci/src/Leonardo/obj/",
+        "projectUniqueName": "/home/bb/Dev/School/Dotnet/dotnet-fibo/src/Leonardo/Leonardo.csproj",
+        "projectName": "benoit.bmt.Fibonacci",
+        "projectPath": "/home/bb/Dev/School/Dotnet/dotnet-fibo/src/Leonardo/Leonardo.csproj",
+        "packagesPath": "/home/bb/.nuget/packages/",
+        "outputPath": "/home/bb/Dev/School/Dotnet/dotnet-fibo/src/Leonardo/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/Benoit/.nuget/NuGet/NuGet.Config"
+          "/home/bb/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "net8.0"
+          "net7.0"
         ],
         "sources": {
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net8.0": {
-            "targetAlias": "net8.0",
+          "net7.0": {
+            "targetAlias": "net7.0",
             "projectReferences": {}
           }
         },
@@ -92,8 +92,8 @@
         }
       },
       "frameworks": {
-        "net8.0": {
-          "targetAlias": "net8.0",
+        "net7.0": {
+          "targetAlias": "net7.0",
           "imports": [
             "net461",
             "net462",
@@ -105,12 +105,22 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[7.0.15, 7.0.15]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[7.0.15, 7.0.15]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.100-rc.1.23463.5/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/home/bb/.dotnet/sdk/8.0.101/RuntimeIdentifierGraph.json"
         }
       }
     }
